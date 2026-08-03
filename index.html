@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nabung Jadi Income (NJI) - Presentasi by Tini</title>
+    <title>Nabung Jadi Income (NJI) - Smart System</title>
     <style>
         /* CSS Variables untuk Tema Warna NJI */
         :root {
@@ -11,7 +11,6 @@
             --gold-light: #f3e5ab;
             --black: #0a0a0a;
             --dark-gray: #1a1a1a;
-            --light-gray: #2a2a2a;
             --white: #ffffff;
             --text-color: #e0e0e0;
         }
@@ -105,7 +104,6 @@
             border: 1px solid var(--gold);
             text-align: center;
         }
-
         .content-block p {
             margin-top: 0;
             margin-bottom: 15px;
@@ -142,7 +140,56 @@
             top: 0;
         }
 
-        /* TESTIMONI */
+        /* ==========================================
+           ANIMASI PANAH & TOMBOL CTA 
+           ========================================== */
+        
+        .bouncing-arrows {
+            font-size: 40px;
+            color: var(--gold);
+            text-align: center;
+            margin: 10px 0 25px 0;
+            animation: bounce 2s infinite;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-15px); }
+            60% { transform: translateY(-7px); }
+        }
+
+        .cta-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+        .btn-wa {
+            display: inline-block;
+            background: linear-gradient(135deg, #d4af37, #b58500);
+            color: var(--black);
+            text-decoration: none;
+            padding: 18px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 50px;
+            width: 100%;
+            box-sizing: border-box;
+            /* Efek Glowing Pulse Gold */
+            box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
+            animation: pulse-gold 2s infinite;
+            transition: all 0.3s ease;
+        }
+        .btn-wa:hover {
+            transform: translateY(-3px);
+            animation: none;
+            box-shadow: 0 15px 25px rgba(212, 175, 55, 0.5);
+        }
+        @keyframes pulse-gold {
+            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+        }
+
+        /* TESTIMONI & FAQ */
         .section-title {
             text-align: center;
             color: var(--gold);
@@ -168,8 +215,6 @@
             font-weight: bold;
             font-size: 14px;
         }
-
-        /* FAQ */
         .faq-item {
             margin-bottom: 15px;
             border: 1px solid #333;
@@ -187,30 +232,6 @@
             background-color: #111;
             font-size: 14px;
             color: #bbb;
-        }
-
-        /* CTA BUTTON */
-        .cta-container {
-            text-align: center;
-            margin: 40px 0;
-        }
-        .btn-wa {
-            display: inline-block;
-            background: linear-gradient(135deg, #d4af37, #b58500);
-            color: var(--black);
-            text-decoration: none;
-            padding: 18px 30px;
-            font-size: 18px;
-            font-weight: bold;
-            border-radius: 50px;
-            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
-            transition: all 0.3s ease;
-            width: 100%;
-            box-sizing: border-box;
-        }
-        .btn-wa:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 25px rgba(212, 175, 55, 0.5);
         }
 
         /* FOOTER & DISCLAIMER */
@@ -242,11 +263,11 @@
     <!-- Header Section -->
     <header class="top-header">
         <div class="logo-container">
-            <!-- LOGO NJI -->
             <img src="IMG-20260803-WA0002.jpg" alt="Logo NJI">
         </div>
-        <div class="presenter-badge">
-            Di Presentasikan oleh : Tini
+        <!-- ID presenter-badge untuk ditarik oleh Script Parameter -->
+        <div class="presenter-badge" id="presenter-badge">
+            Memuat Data...
         </div>
     </header>
 
@@ -254,15 +275,11 @@
         
         <!-- Hero Section -->
         <div class="hero-section">
-            <!-- FOTO HERO YANG BARU -->
-            <img src="FB_IMG_1785752367398.jpg" alt="Tini - KIMOL INDONESIA" class="hero-image">
-            
+            <img src="FB_IMG_1785752367398.jpg" alt="Hero Image KIMOL INDONESIA" class="hero-image">
             <h1>KELUH KESAH NETWORKER & SOLUSI MELALUI NJI</h1>
             <p class="subtitle">UNTUK ANDA YANG PERNAH LELAH BERJUANG DI BISNIS JARINGAN... IZINKAN KAMI BERCERITA SEBENTAR... ☕</p>
         </div>
 
-        <!-- Body Copywriting dengan Background Selang-Seling -->
-        
         <div class="content-block bg-dark">
             <p>Kalau Anda sudah lama di dunia asuransi, MLM, atau network marketing, pasti hafal siklus ini.</p>
             <p>Awal join, semangat luar biasa!<br>
@@ -280,7 +297,6 @@
             <p>Tapi pelan-pelan, daftar nama di HP mulai habis.<br>
             Tawarin ke teman, malah sering dijauhi.<br>
             Presentasi berbusa-busa, ujung-ujungnya dijawab: <i>"Nanti ya, tanya istri dulu."</i></p>
-            
             <p>Yang paling menyedihkan bukan saat ditolaknya...<br>
             Tetapi saat mulai lelah, tenaga terkuras, lalu muncul kalimat yang sering kita dengar:</p>
             <p style="color: var(--gold-light);"><i>"Mungkin saya memang nggak berbakat di bisnis ini."</i><br>
@@ -298,10 +314,8 @@
         <div class="content-block bg-black">
             <p>Dulu orang mau diajak kumpul di hotel.<br>
             Sekarang orang lebih nyaman cari info lewat scroll HP di rumah.</p>
-            
             <p>Dulu orang harus dikejar-kejar.<br>
             Sekarang orang lebih suka baca Landing Page dan edukasi lewat WhatsApp.</p>
-            
             <p>Masa iya, dunia sudah serba canggih, kita masih mau kerja keras peras keringat seperti 10-20 tahun lalu? Apalagi untuk kita-kita yang usianya sudah tidak muda lagi. Tenaga fisik ada batasnya!</p>
         </div>
 
@@ -314,7 +328,6 @@
         
         <p style="text-align: center;">Saya merancang sebuah <i>Digital Support System</i> di mana:</p>
 
-        <!-- Box Solusi -->
         <div class="highlight-box">
             <ul>
                 <li>Anda punya Asisten Robot AI yang bekerja 24 jam nonstop.</li>
@@ -326,20 +339,16 @@
 
         <div class="content-block bg-dark">
             <p>Fisik Anda boleh "nganggur" istirahat di rumah sambil ngopi, tapi aset digital Anda yang keliling internet mencari calon mitra!</p>
-
             <p style="color: var(--gold);"><b>Lalu apa kendaraan bisnisnya?</b></p>
             <p>Tentu saja yang aman, diawasi OJK resmi, dan membawa berkah: <b>3iReborn bersinergi dengan Istikmal Syariah</b>.</p>
-
             <p>Kita bangun Passive Income bulanan (Aset Dunia), sekaligus kita kunci niat suci menuju Tanah Suci (Tabungan Umroh). Sesuai dengan prinsip saya: <i>"Kejarlah Akherat, Insyaallah Dunia Kudapat."</i> 🕋✨</p>
         </div>
 
         <div class="content-block bg-black">
             <p>Bisnis yang bertahan lama bukan hanya karena produknya bagus.<br>
             Tapi karena SISTEMNYA bisa diduplikasi oleh siapa saja, bahkan oleh mereka yang gaptek sekalipun.</p>
-
             <p>Kalau Anda seorang pejuang keluarga yang mulai lelah mengejar prospek satu per satu...<br>
             Kalau Anda ingin membangun aset masa tua yang sejahtera dengan cara yang lebih cerdas dan elegan...</p>
-
             <p>Mungkin yang Anda butuhkan bukan bisnis baru.<br>
             <span style="color: var(--gold);"><b>Tapi SISTEM BARU yang bekerja untuk Anda.</b></span></p>
         </div>
@@ -348,19 +357,21 @@
             <p style="font-size: 18px; margin-bottom: 0;">Mari kita diskusi. Sistemnya sudah saya siapkan.<br>Anda tinggal <b style="color: var(--gold);">A.T.P (Amati, Tiru, Plek!)</b></p>
         </div>
         
-        <div style="text-align: center; font-size: 30px; margin: 20px 0;">⬇️⬇️⬇️</div>
+        <!-- ANIMASI PANAH KE BAWAH -->
+        <div class="bouncing-arrows">
+            🡇 🡇 🡇
+        </div>
 
         <!-- CTA Section -->
-        <div class="cta-container">
+        <div class="cta-container" style="margin-top: 10px;">
             <p style="margin-bottom: 20px;">Klik link di bawah ini untuk melihat bagaimana NJI Smart System bekerja, dan mari jadwalkan ngopi virtual bersama saya:</p>
             
-            <!-- Link WhatsApp -->
-            <a href="https://api.whatsapp.com/send?phone=6281586197772&text=Halo%20Mbak%20Tini,%20saya%20sudah%20baca%20informasi%20di%20Landing%20Page.%20Saya%20tertarik%20diskusi%20lebih%20lanjut%20tentang%20Sistem%20NJI%20dan%203iReborn." class="btn-wa">☕ JADWALKAN NGOPI VIRTUAL</a>
+            <!-- Tombol WA dengan ID dinamis -->
+            <a href="#" id="btn-wa-link" class="btn-wa">☕ JADWALKAN NGOPI VIRTUAL</a>
             
             <p style="margin-top: 20px; font-style: italic; color: var(--gold-light);">Siapa tahu, ini adalah jawaban dari doa-doa Anda selama ini. Salam sukses berkah berkarya! 🚀</p>
         </div>
 
-        <!-- Section Testimoni (Dummy) -->
         <h3 class="section-title">Apa Kata Mereka?</h3>
         <div class="testi-card">
             <div class="testi-text">"Dulu saya capek presentasi door-to-door dan sering ditolak. Sejak pakai sistem digital NJI, prospek yang datang nyari saya. Sistem AI-nya benar-benar bantu follow up secara otomatis!"</div>
@@ -371,7 +382,6 @@
             <div class="testi-name">— Siti A., Mitra 3iReborn</div>
         </div>
 
-        <!-- Section FAQ (Dummy) -->
         <h3 class="section-title">Pertanyaan Seputar NJI</h3>
         <div class="faq-item">
             <div class="faq-question">Q: Apakah butuh pengalaman IT / Laptop?</div>
@@ -397,6 +407,27 @@
         </div>
 
     </div>
+
+    <!-- SCRIPT PARAMETER REPLIKA -->
+    <script>
+        // 1. Ambil Parameter dari URL
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        // 2. Set Default (Jika link dibuka tanpa parameter, pakai data Bu Tini)
+        const namaMitra = urlParams.get('nama') || 'Tini';
+        const waMitra = urlParams.get('wa') || '6281586197772';
+
+        // 3. Update Text di Header (Presenter Badge)
+        document.getElementById('presenter-badge').innerText = 'Di Presentasikan oleh : ' + namaMitra;
+
+        // 4. Update Link WhatsApp di Tombol
+        // Encode URI Component digunakan agar spasi dan simbol di pesan aman saat pindah ke WA
+        const pesanWA = encodeURIComponent('Halo ' + namaMitra + ', saya sudah baca informasi di Landing Page. Saya tertarik diskusi lebih lanjut tentang Sistem NJI dan 3iReborn.');
+        const linkWhatsApp = 'https://api.whatsapp.com/send?phone=' + waMitra + '&text=' + pesanWA;
+        
+        // Tanam link yang sudah jadi ke Tombol CTA
+        document.getElementById('btn-wa-link').href = linkWhatsApp;
+    </script>
 
 </body>
 </html>
