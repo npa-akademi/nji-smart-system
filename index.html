@@ -141,21 +141,24 @@
         }
 
         /* ==========================================
-           ANIMASI PANAH & TOMBOL CTA 
+           ANIMASI PANAH MERAH & TOMBOL CTA 
            ========================================== */
         
         .bouncing-arrows {
-            font-size: 40px;
-            color: var(--gold);
+            font-size: 55px;
+            color: #ff1a1a; /* Merah Menyala */
             text-align: center;
             margin: 10px 0 25px 0;
-            animation: bounce 2s infinite;
-            text-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
+            animation: bounce 1.5s infinite;
+            text-shadow: 0 5px 15px rgba(255, 26, 26, 0.6);
+            font-weight: 900;
+            font-family: Arial, sans-serif;
+            letter-spacing: 5px;
         }
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-15px); }
-            60% { transform: translateY(-7px); }
+            40% { transform: translateY(-20px); }
+            60% { transform: translateY(-10px); }
         }
 
         .cta-container {
@@ -265,7 +268,6 @@
         <div class="logo-container">
             <img src="IMG-20260803-WA0002.jpg" alt="Logo NJI">
         </div>
-        <!-- ID presenter-badge untuk ditarik oleh Script Parameter -->
         <div class="presenter-badge" id="presenter-badge">
             Memuat Data...
         </div>
@@ -357,9 +359,9 @@
             <p style="font-size: 18px; margin-bottom: 0;">Mari kita diskusi. Sistemnya sudah saya siapkan.<br>Anda tinggal <b style="color: var(--gold);">A.T.P (Amati, Tiru, Plek!)</b></p>
         </div>
         
-        <!-- ANIMASI PANAH KE BAWAH -->
+        <!-- ANIMASI PANAH MERAH YANG AMAN 100% -->
         <div class="bouncing-arrows">
-            🡇 🡇 🡇
+            &#8595; &#8595; &#8595;
         </div>
 
         <!-- CTA Section -->
@@ -421,7 +423,6 @@
         document.getElementById('presenter-badge').innerText = 'Di Presentasikan oleh : ' + namaMitra;
 
         // 4. Update Link WhatsApp di Tombol
-        // Encode URI Component digunakan agar spasi dan simbol di pesan aman saat pindah ke WA
         const pesanWA = encodeURIComponent('Halo ' + namaMitra + ', saya sudah baca informasi di Landing Page. Saya tertarik diskusi lebih lanjut tentang Sistem NJI dan 3iReborn.');
         const linkWhatsApp = 'https://api.whatsapp.com/send?phone=' + waMitra + '&text=' + pesanWA;
         
