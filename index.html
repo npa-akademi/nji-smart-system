@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nabung Jadi Income (NJI) - Presentasi by Tini</title>
+    <style>
+        /* CSS Variables untuk Tema Warna NJI */
+        :root {
+            --gold: #d4af37;
+            --gold-light: #f3e5ab;
+            --black: #111111;
+            --dark-gray: #222222;
+            --white: #ffffff;
+            --text-color: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--black);
+            color: var(--white);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* HEADER */
+        .top-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: var(--dark-gray);
+            border-bottom: 2px solid var(--gold);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo-container img {
+            height: 50px;
+            width: auto;
+        }
+        .presenter-badge {
+            background-color: var(--gold);
+            color: var(--black);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* CONTAINER UMUM */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* HERO SECTION */
+        .hero-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .hero-image-placeholder {
+            width: 100%;
+            height: 300px;
+            background-color: #333;
+            border: 2px dashed var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        h1 {
+            color: var(--gold);
+            font-size: 24px;
+            line-height: 1.4;
+            margin-bottom: 15px;
+        }
+        .subtitle {
+            font-size: 16px;
+            color: var(--gold-light);
+            font-style: italic;
+            border-bottom: 1px solid #444;
+            padding-bottom: 20px;
+        }
+
+        /* BODY COPY (STORYTELLING) */
+        .story-content p {
+            margin-bottom: 15px;
+            font-size: 15px;
+            color: var(--text-color);
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+            border-left: 4px solid var(--gold);
+            padding: 20px;
+            border-radius: 0 10px 10px 0;
+            margin: 30px 0;
+        }
+        .highlight-box ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .highlight-box li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            font-weight: 500;
+            color: var(--gold-light);
+        }
+        .highlight-box li::before {
+            content: '✅';
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* TESTIMONI */
+        .section-title {
+            text-align: center;
+            color: var(--gold);
+            font-size: 22px;
+            margin: 40px 0 20px;
+            border-top: 1px solid #333;
+            padding-top: 30px;
+        }
+        .testi-card {
+            background-color: var(--dark-gray);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #333;
+        }
+        .testi-text {
+            font-style: italic;
+            color: #ccc;
+            margin-bottom: 10px;
+        }
+        .testi-name {
+            color: var(--gold);
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        /* FAQ */
+        .faq-item {
+            margin-bottom: 15px;
+            border: 1px solid #333;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .faq-question {
+            background-color: var(--dark-gray);
+            padding: 15px;
+            font-weight: bold;
+            color: var(--gold);
+        }
+        .faq-answer {
+            padding: 15px;
+            background-color: #1a1a1a;
+            font-size: 14px;
+            color: #bbb;
+        }
+
+        /* CTA BUTTON */
+        .cta-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+        .btn-wa {
+            display: inline-block;
+            background: linear-gradient(135deg, #d4af37, #b58500);
+            color: var(--black);
+            text-decoration: none;
+            padding: 18px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 50px;
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+            width: 90%;
+            box-sizing: border-box;
+        }
+        .btn-wa:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(212, 175, 55, 0.5);
+        }
+
+        /* FOOTER & DISCLAIMER */
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            font-size: 12px;
+            color: #777;
+        }
+        .hashtags {
+            color: var(--gold-light);
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        .disclaimer-box {
+            background-color: #111;
+            padding: 15px;
+            border: 1px dashed #555;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="top-header">
+        <div class="logo-container">
+            <!-- LOGO NJI (Nama file sesuai request) -->
+            <img src="IMG-20260803-WA0002.jpg" alt="Logo NJI">
+        </div>
+        <div class="presenter-badge">
+            Di Presentasikan oleh : Tini
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="hero-image-placeholder">
+                [ Tempat Foto Hero / Foto Bu Tini ]
+            </div>
+            <h1>KELUH KESAH NETWORKER & SOLUSI MELALUI NJI</h1>
+            <p class="subtitle">UNTUK ANDA YANG PERNAH LELAH BERJUANG DI BISNIS JARINGAN... IZINKAN KAMI BERCERITA SEBENTAR... ☕</p>
+        </div>
+
+        <!-- Body Copywriting -->
+        <div class="story-content">
+            <p>Kalau Anda sudah lama di dunia asuransi, MLM, atau network marketing, pasti hafal siklus ini.</p>
+            <p>Awal join, semangat luar biasa!<br>
+            Bikin daftar nama.<br>
+            Hubungi teman sekolah, saudara, sampai tetangga.<br>
+            Prospek door-to-door.<br>
+            Kepanasan di jalan, kehujanan cari alamat.<br>
+            Traktir ngopi prospek, keluar uang bensin.<br>
+            Datang ke Home Meeting atau BOP sampai larut malam.<br>
+            Ninggalin keluarga di rumah.</p>
+            
+            <p>Semangat memang masih ada...</p>
+            <p>Tapi pelan-pelan, daftar nama di HP mulai habis.<br>
+            Tawarin ke teman, malah sering dijauhi.<br>
+            Presentasi berbusa-busa, ujung-ujungnya dijawab: <i>"Nanti ya, tanya istri dulu."</i></p>
+            
+            <p>Yang paling menyedihkan bukan saat ditolaknya...<br>
+            Tetapi saat mulai lelah, tenaga terkuras, lalu muncul kalimat yang sering kita dengar:</p>
+            <p><i>"Mungkin saya memang nggak berbakat di bisnis ini."</i><br>
+            <i>"Mungkin saya nggak pinter ngomong."</i></p>
+            
+            <p>Padahal...</p>
+            
+            <p>Di usia saya yang sudah menginjak <b>[TUA/DEWASA]</b> tahun ini, saya belajar satu hal penting.</p>
+            <p>Masalahnya BUKAN pada diri Anda.<br>
+            Masalahnya BUKAN pada kendaraan bisnisnya.<br>
+            Tapi sering kali masalahnya... <b>Anda masih memakai CARA LAMA di era yang sudah berubah!</b></p>
+            
+            <p>Dulu orang mau diajak kumpul di hotel.<br>
+            Sekarang orang lebih nyaman cari info lewat scroll HP di rumah.</p>
+            
+            <p>Dulu orang harus dikejar-kejar.<br>
+            Sekarang orang lebih suka baca Landing Page dan edukasi lewat WhatsApp.</p>
+            
+            <p>Masa iya, dunia sudah serba canggih, kita masih mau kerja keras peras keringat seperti 10-20 tahun lalu? Apalagi untuk kita-kita yang usianya sudah tidak muda lagi. Tenaga fisik ada batasnya!</p>
+            
+            <p>Itulah mengapa, saat saya membangun ekosistem <b>NABUNG JADI INCOME (NJI)</b>, yang pertama kali saya buat BUKAN sekadar janji muluk-muluk.</p>
+            <p>Tetapi sebuah <b>SISTEM</b>.</p>
+
+            <h2 style="color: var(--gold); text-align: center; margin-top: 40px;">Kenalkan: NJI dibawah naungan Support System KIM<br><span style="font-size: 16px;">(Komunitas Indonesia Menabung)</span></h2>
+            
+            <p style="text-align: center;">Saya merancang sebuah <i>Digital Support System</i> di mana:</p>
+
+            <!-- Box Solusi -->
+            <div class="highlight-box">
+                <ul>
+                    <li>Anda punya Asisten Robot AI yang bekerja 24 jam nonstop.</li>
+                    <li>Anda punya Landing Page / Web Replika sendiri hanya dengan beberapa klik.</li>
+                    <li>Prospek datang sendiri (Trafik Magnet), bukan Anda yang capek keliling cari orang.</li>
+                    <li>Sistem yang melakukan presentasi, dan sistem yang membantu follow-up.</li>
+                </ul>
+            </div>
+
+            <p>Fisik Anda boleh "nganggur" istirahat di rumah sambil ngopi, tapi aset digital Anda yang keliling internet mencari calon mitra!</p>
+
+            <p><b>Lalu apa kendaraan bisnisnya?</b><br>
+            Tentu saja yang aman, diawasi OJK resmi, dan membawa berkah: <b>3iReborn bersinergi dengan Istikmal Syariah</b>.</p>
+
+            <p>Kita bangun Passive Income bulanan (Aset Dunia), sekaligus kita kunci niat suci menuju Tanah Suci (Tabungan Umroh). Sesuai dengan prinsip saya: <i>"Kejarlah Akherat, Insyaallah Dunia Kudapat."</i> 🕋✨</p>
+
+            <p>Bisnis yang bertahan lama bukan hanya karena produknya bagus.<br>
+            Tapi karena SISTEMNYA bisa diduplikasi oleh siapa saja, bahkan oleh mereka yang gaptek sekalipun.</p>
+
+            <p>Kalau Anda seorang pejuang keluarga yang mulai lelah mengejar prospek satu per satu...<br>
+            Kalau Anda ingin membangun aset masa tua yang sejahtera dengan cara yang lebih cerdas dan elegan...</p>
+
+            <p>Mungkin yang Anda butuhkan bukan bisnis baru.<br>
+            <b>Tapi SISTEM BARU yang bekerja untuk Anda.</b></p>
+            
+            <p style="text-align: center; font-size: 18px; margin-top: 30px;">Mari kita diskusi. Sistemnya sudah saya siapkan.<br>Anda tinggal <b>A.T.P (Amati, Tiru, Plek!)</b></p>
+            
+            <div style="text-align: center; font-size: 30px; margin: 20px 0;">⬇️⬇️⬇️</div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta-container">
+            <p style="margin-bottom: 20px;">Klik link di bawah ini untuk melihat bagaimana NJI Smart System bekerja, dan mari jadwalkan ngopi virtual bersama saya:</p>
+            
+            <!-- Link WhatsApp -->
+            <a href="https://api.whatsapp.com/send?phone=6281586197772&text=Halo%20Mbak%20Tini,%20saya%20sudah%20baca%20informasi%20di%20Landing%20Page.%20Saya%20tertarik%20diskusi%20lebih%20lanjut%20tentang%20Sistem%20NJI%20dan%203iReborn." class="btn-wa">☕ JADWALKAN NGOPI VIRTUAL</a>
+            
+            <p style="margin-top: 20px; font-style: italic; color: var(--gold-light);">Siapa tahu, ini adalah jawaban dari doa-doa Anda selama ini. Salam sukses berkah berkarya! 🚀</p>
+        </div>
+
+        <!-- Section Testimoni (Dummy) -->
+        <h3 class="section-title">Apa Kata Mereka?</h3>
+        <div class="testi-card">
+            <div class="testi-text">"Dulu saya capek presentasi door-to-door dan sering ditolak. Sejak pakai sistem digital NJI, prospek yang datang nyari saya. Sistem AI-nya benar-benar bantu follow up secara otomatis!"</div>
+            <div class="testi-name">— Budi S., Mantan Pemain Jaringan</div>
+        </div>
+        <div class="testi-card">
+            <div class="testi-text">"Saya ibu rumah tangga yang awalnya gaptek. Tapi konsep A.T.P (Amati, Tiru, Plek) dari KIM bikin semuanya jadi gampang. Duduk di rumah, sebar link, sistem yang kerja."</div>
+            <div class="testi-name">— Siti A., Mitra 3iReborn</div>
+        </div>
+
+        <!-- Section FAQ (Dummy) -->
+        <h3 class="section-title">Pertanyaan Seputar NJI</h3>
+        <div class="faq-item">
+            <div class="faq-question">Q: Apakah butuh pengalaman IT / Laptop?</div>
+            <div class="faq-answer">A: Sama sekali tidak. Sistem kami dirancang 100% bisa dijalankan hanya menggunakan Smartphone/HP yang Anda genggam saat ini. Semua alat tempur sudah disediakan.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Q: Apakah legalitas kendaraannya aman?</div>
+            <div class="faq-answer">A: Sangat aman. Kami bersinergi dengan 3iReborn (Istikmal Syariah) yang resmi diawasi oleh OJK (Otoritas Jasa Keuangan). Aset dunia dapat, keberkahan akhirat terjaga.</div>
+        </div>
+
+        <!-- Footer Section -->
+        <div class="footer">
+            <div class="hashtags">
+                #NJI #KIM #KomunitasIndonesiaMenabung #3iReborn
+            </div>
+            
+            <div class="disclaimer-box">
+                <b>DISCLAIMER:</b><br>
+                Informasi yang terdapat pada halaman ini bertujuan sebagai sarana edukasi dan informasi bisnis. Hasil yang didapatkan setiap individu dapat bervariasi bergantung pada tingkat komitmen, usaha, dan konsistensi masing-masing mitra dalam menjalankan sistem. Bisnis ini diawasi secara resmi, dan kami tidak menjanjikan skema cepat kaya tanpa usaha.
+            </div>
+            
+            <p>&copy; 2026 NJI Support System - Komunitas Indonesia Menabung. All Rights Reserved.</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
