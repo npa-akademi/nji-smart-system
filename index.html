@@ -9,8 +9,9 @@
         :root {
             --gold: #d4af37;
             --gold-light: #f3e5ab;
-            --black: #111111;
-            --dark-gray: #222222;
+            --black: #0a0a0a;
+            --dark-gray: #1a1a1a;
+            --light-gray: #2a2a2a;
             --white: #ffffff;
             --text-color: #e0e0e0;
         }
@@ -30,7 +31,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 20px;
-            background-color: var(--dark-gray);
+            background-color: #111;
             border-bottom: 2px solid var(--gold);
             position: sticky;
             top: 0;
@@ -61,18 +62,12 @@
             text-align: center;
             margin-bottom: 30px;
         }
-        .hero-image-placeholder {
+        .hero-image {
             width: 100%;
-            height: 300px;
-            background-color: #333;
-            border: 2px dashed var(--gold);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gold);
             border-radius: 10px;
+            border: 2px solid var(--gold);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.25);
             margin-bottom: 20px;
-            font-style: italic;
         }
         h1 {
             color: var(--gold);
@@ -84,21 +79,47 @@
             font-size: 16px;
             color: var(--gold-light);
             font-style: italic;
-            border-bottom: 1px solid #444;
+            border-bottom: 1px dashed #444;
             padding-bottom: 20px;
         }
 
-        /* BODY COPY (STORYTELLING) */
-        .story-content p {
-            margin-bottom: 15px;
+        /* BLOK TEKS (SELANG-SELING) */
+        .content-block {
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
             font-size: 15px;
             color: var(--text-color);
         }
-        .highlight-box {
-            background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+        .bg-dark {
+            background-color: var(--dark-gray);
             border-left: 4px solid var(--gold);
+        }
+        .bg-black {
+            background-color: var(--black);
+            border: 1px solid #333;
+            border-left: 4px solid var(--gold-light);
+        }
+        .bg-gradient {
+            background: linear-gradient(135deg, #2a2a2a, #111);
+            border: 1px solid var(--gold);
+            text-align: center;
+        }
+
+        .content-block p {
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        .content-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Box Solusi */
+        .highlight-box {
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--gold);
             padding: 20px;
-            border-radius: 0 10px 10px 0;
+            border-radius: 10px;
             margin: 30px 0;
         }
         .highlight-box ul {
@@ -112,6 +133,7 @@
             position: relative;
             font-weight: 500;
             color: var(--gold-light);
+            font-size: 15px;
         }
         .highlight-box li::before {
             content: '✅';
@@ -126,7 +148,7 @@
             color: var(--gold);
             font-size: 22px;
             margin: 40px 0 20px;
-            border-top: 1px solid #333;
+            border-top: 1px dashed #444;
             padding-top: 30px;
         }
         .testi-card {
@@ -162,7 +184,7 @@
         }
         .faq-answer {
             padding: 15px;
-            background-color: #1a1a1a;
+            background-color: #111;
             font-size: 14px;
             color: #bbb;
         }
@@ -183,7 +205,7 @@
             border-radius: 50px;
             box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
             transition: all 0.3s ease;
-            width: 90%;
+            width: 100%;
             box-sizing: border-box;
         }
         .btn-wa:hover {
@@ -220,7 +242,7 @@
     <!-- Header Section -->
     <header class="top-header">
         <div class="logo-container">
-            <!-- LOGO NJI (Nama file sesuai request) -->
+            <!-- LOGO NJI -->
             <img src="IMG-20260803-WA0002.jpg" alt="Logo NJI">
         </div>
         <div class="presenter-badge">
@@ -232,15 +254,16 @@
         
         <!-- Hero Section -->
         <div class="hero-section">
-            <div class="hero-image-placeholder">
-                [ Tempat Foto Hero / Foto Bu Tini ]
-            </div>
+            <!-- FOTO HERO YANG BARU -->
+            <img src="FB_IMG_1785752367398.jpg" alt="Tini - KIMOL INDONESIA" class="hero-image">
+            
             <h1>KELUH KESAH NETWORKER & SOLUSI MELALUI NJI</h1>
             <p class="subtitle">UNTUK ANDA YANG PERNAH LELAH BERJUANG DI BISNIS JARINGAN... IZINKAN KAMI BERCERITA SEBENTAR... ☕</p>
         </div>
 
-        <!-- Body Copywriting -->
-        <div class="story-content">
+        <!-- Body Copywriting dengan Background Selang-Seling -->
+        
+        <div class="content-block bg-dark">
             <p>Kalau Anda sudah lama di dunia asuransi, MLM, atau network marketing, pasti hafal siklus ini.</p>
             <p>Awal join, semangat luar biasa!<br>
             Bikin daftar nama.<br>
@@ -250,7 +273,9 @@
             Traktir ngopi prospek, keluar uang bensin.<br>
             Datang ke Home Meeting atau BOP sampai larut malam.<br>
             Ninggalin keluarga di rumah.</p>
-            
+        </div>
+
+        <div class="content-block bg-black">
             <p>Semangat memang masih ada...</p>
             <p>Tapi pelan-pelan, daftar nama di HP mulai habis.<br>
             Tawarin ke teman, malah sering dijauhi.<br>
@@ -258,16 +283,19 @@
             
             <p>Yang paling menyedihkan bukan saat ditolaknya...<br>
             Tetapi saat mulai lelah, tenaga terkuras, lalu muncul kalimat yang sering kita dengar:</p>
-            <p><i>"Mungkin saya memang nggak berbakat di bisnis ini."</i><br>
+            <p style="color: var(--gold-light);"><i>"Mungkin saya memang nggak berbakat di bisnis ini."</i><br>
             <i>"Mungkin saya nggak pinter ngomong."</i></p>
-            
+        </div>
+
+        <div class="content-block bg-dark">
             <p>Padahal...</p>
-            
             <p>Di usia saya yang sudah menginjak <b>[TUA/DEWASA]</b> tahun ini, saya belajar satu hal penting.</p>
             <p>Masalahnya BUKAN pada diri Anda.<br>
             Masalahnya BUKAN pada kendaraan bisnisnya.<br>
-            Tapi sering kali masalahnya... <b>Anda masih memakai CARA LAMA di era yang sudah berubah!</b></p>
-            
+            Tapi sering kali masalahnya... <span style="color: var(--gold);"><b>Anda masih memakai CARA LAMA di era yang sudah berubah!</b></span></p>
+        </div>
+
+        <div class="content-block bg-black">
             <p>Dulu orang mau diajak kumpul di hotel.<br>
             Sekarang orang lebih nyaman cari info lewat scroll HP di rumah.</p>
             
@@ -275,31 +303,37 @@
             Sekarang orang lebih suka baca Landing Page dan edukasi lewat WhatsApp.</p>
             
             <p>Masa iya, dunia sudah serba canggih, kita masih mau kerja keras peras keringat seperti 10-20 tahun lalu? Apalagi untuk kita-kita yang usianya sudah tidak muda lagi. Tenaga fisik ada batasnya!</p>
-            
-            <p>Itulah mengapa, saat saya membangun ekosistem <b>NABUNG JADI INCOME (NJI)</b>, yang pertama kali saya buat BUKAN sekadar janji muluk-muluk.</p>
-            <p>Tetapi sebuah <b>SISTEM</b>.</p>
+        </div>
 
-            <h2 style="color: var(--gold); text-align: center; margin-top: 40px;">Kenalkan: NJI dibawah naungan Support System KIM<br><span style="font-size: 16px;">(Komunitas Indonesia Menabung)</span></h2>
-            
-            <p style="text-align: center;">Saya merancang sebuah <i>Digital Support System</i> di mana:</p>
+        <div class="content-block bg-gradient">
+            <p style="font-size: 16px;">Itulah mengapa, saat saya membangun ekosistem <b>NABUNG JADI INCOME (NJI)</b>, yang pertama kali saya buat BUKAN sekadar janji muluk-muluk.</p>
+            <p style="font-size: 18px; color: var(--gold); font-weight: bold;">Tetapi sebuah SISTEM.</p>
+        </div>
 
-            <!-- Box Solusi -->
-            <div class="highlight-box">
-                <ul>
-                    <li>Anda punya Asisten Robot AI yang bekerja 24 jam nonstop.</li>
-                    <li>Anda punya Landing Page / Web Replika sendiri hanya dengan beberapa klik.</li>
-                    <li>Prospek datang sendiri (Trafik Magnet), bukan Anda yang capek keliling cari orang.</li>
-                    <li>Sistem yang melakukan presentasi, dan sistem yang membantu follow-up.</li>
-                </ul>
-            </div>
+        <h2 style="color: var(--gold); text-align: center; margin-top: 40px; line-height: 1.4;">Kenalkan: NJI dibawah naungan Support System KIM<br><span style="font-size: 16px; color: var(--gold-light);">(Komunitas Indonesia Menabung)</span></h2>
+        
+        <p style="text-align: center;">Saya merancang sebuah <i>Digital Support System</i> di mana:</p>
 
+        <!-- Box Solusi -->
+        <div class="highlight-box">
+            <ul>
+                <li>Anda punya Asisten Robot AI yang bekerja 24 jam nonstop.</li>
+                <li>Anda punya Landing Page / Web Replika sendiri hanya dengan beberapa klik.</li>
+                <li>Prospek datang sendiri (Trafik Magnet), bukan Anda yang capek keliling cari orang.</li>
+                <li>Sistem yang melakukan presentasi, dan sistem yang membantu follow-up.</li>
+            </ul>
+        </div>
+
+        <div class="content-block bg-dark">
             <p>Fisik Anda boleh "nganggur" istirahat di rumah sambil ngopi, tapi aset digital Anda yang keliling internet mencari calon mitra!</p>
 
-            <p><b>Lalu apa kendaraan bisnisnya?</b><br>
-            Tentu saja yang aman, diawasi OJK resmi, dan membawa berkah: <b>3iReborn bersinergi dengan Istikmal Syariah</b>.</p>
+            <p style="color: var(--gold);"><b>Lalu apa kendaraan bisnisnya?</b></p>
+            <p>Tentu saja yang aman, diawasi OJK resmi, dan membawa berkah: <b>3iReborn bersinergi dengan Istikmal Syariah</b>.</p>
 
             <p>Kita bangun Passive Income bulanan (Aset Dunia), sekaligus kita kunci niat suci menuju Tanah Suci (Tabungan Umroh). Sesuai dengan prinsip saya: <i>"Kejarlah Akherat, Insyaallah Dunia Kudapat."</i> 🕋✨</p>
+        </div>
 
+        <div class="content-block bg-black">
             <p>Bisnis yang bertahan lama bukan hanya karena produknya bagus.<br>
             Tapi karena SISTEMNYA bisa diduplikasi oleh siapa saja, bahkan oleh mereka yang gaptek sekalipun.</p>
 
@@ -307,12 +341,14 @@
             Kalau Anda ingin membangun aset masa tua yang sejahtera dengan cara yang lebih cerdas dan elegan...</p>
 
             <p>Mungkin yang Anda butuhkan bukan bisnis baru.<br>
-            <b>Tapi SISTEM BARU yang bekerja untuk Anda.</b></p>
-            
-            <p style="text-align: center; font-size: 18px; margin-top: 30px;">Mari kita diskusi. Sistemnya sudah saya siapkan.<br>Anda tinggal <b>A.T.P (Amati, Tiru, Plek!)</b></p>
-            
-            <div style="text-align: center; font-size: 30px; margin: 20px 0;">⬇️⬇️⬇️</div>
+            <span style="color: var(--gold);"><b>Tapi SISTEM BARU yang bekerja untuk Anda.</b></span></p>
         </div>
+        
+        <div class="content-block bg-gradient" style="margin-top: 30px;">
+            <p style="font-size: 18px; margin-bottom: 0;">Mari kita diskusi. Sistemnya sudah saya siapkan.<br>Anda tinggal <b style="color: var(--gold);">A.T.P (Amati, Tiru, Plek!)</b></p>
+        </div>
+        
+        <div style="text-align: center; font-size: 30px; margin: 20px 0;">⬇️⬇️⬇️</div>
 
         <!-- CTA Section -->
         <div class="cta-container">
